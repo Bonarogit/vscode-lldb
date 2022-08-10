@@ -5,7 +5,7 @@ export class WritableBuffer extends stream.Writable {
     private size: number;
     private increment: number;
 
-    static readonly DEFAULT_INCREMENT = 8 * 1024;
+    static readonly DEFAULT_INCREMENT = 1024 * 1024;
     constructor(initialSize: number = WritableBuffer.DEFAULT_INCREMENT, increment: number = WritableBuffer.DEFAULT_INCREMENT) {
         super({ decodeStrings: true })
         this.buffer = Buffer.allocUnsafe(initialSize);
